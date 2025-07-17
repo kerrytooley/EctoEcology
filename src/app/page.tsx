@@ -1,8 +1,35 @@
+'use client';
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { styled } from "styled-components";
+
+// Styled component for the full-screen background image
+const BackgroundImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10;
+  opacity: 0.5;
+`;
+
+const PageWrapper = styled.div`
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+`;
 
 export default function Home() {
   return (
+    <ParallaxProvider>
+          <BackgroundImage src="/forest.jpg" alt="Forest Background" />
+      <PageWrapper>
+        <Parallax speed={-20}>
     <div className={styles.page}>
       <main className={styles.main}>
         <Image
@@ -91,5 +118,8 @@ export default function Home() {
         </a>
       </footer>
     </div>
+    </Parallax>
+    </PageWrapper>
+    </ParallaxProvider>
   );
 }
