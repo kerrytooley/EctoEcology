@@ -4,7 +4,8 @@ import { styled } from "styled-components";
 // Styled carousel card components
 
 const Card = styled(Link)`
-  flex: 0 0 300px;
+margin: 0.5rem;
+  flex: 0 0 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +26,7 @@ const Card = styled(Link)`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;

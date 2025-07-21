@@ -5,15 +5,19 @@ import CarouselCard from "./CarouselCard";
 // Styled carousel and card components
 const Carousel = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   overflow-x: auto;
-  padding: 0 1rem ;
+  padding: 0 1rem;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 1rem;
   -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
-  scrollbar-width: thin; // Show scrollbar on Firefox
-  width: 100%;
+  scrollbar-width: none; // Show scrollbar on Firefox
+  width: fit-content;
   max-width: 100%;
+
+  @media (max-width: 600px) {
+  gap: 0.5rem;
+  }
 `;
 
 // Carousel component to hold multiple CarouselCard components
@@ -24,7 +28,7 @@ const CarouselComponent = () => {
         link="/secondPage"
         image="/EctoE.png"
         title="Example 1"
-        description="This is an example description for card 1."
+        description="This is an example description for card 1 with a longer description and also a really long description."
       />
       <CarouselCard
         link="/secondPage"
