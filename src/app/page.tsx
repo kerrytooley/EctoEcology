@@ -8,10 +8,10 @@ import CarouselComponent from "@/components/Carousel";
 
 // Styled component for the full-screen background image
 const BackgroundImage = styled.img`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
   z-index: -10;
@@ -21,8 +21,8 @@ const BackgroundImage = styled.img`
 const PageWrapper = styled.div`
   position: relative;
   min-height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
+  justify-content: center;
 `;
 
 export default function Home() {

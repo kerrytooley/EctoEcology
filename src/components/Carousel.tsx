@@ -4,16 +4,16 @@ import CarouselCard from "./CarouselCard";
 
 // Styled carousel and card components
 const Carousel = styled.div`
-    display: flex;
+  display: flex;
   gap: 2rem;
   overflow-x: auto;
-  padding: 2rem 0;
+  padding: 0 1rem ;
   scroll-snap-type: x mandatory;
+  scroll-padding: 0 1rem;
   -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
   scrollbar-width: thin; // Show scrollbar on Firefox
-  &::-webkit-scrollbar {
-    height: 8px;
-  }
+  width: 100%;
+  max-width: 100%;
 `;
 
 // Carousel component to hold multiple CarouselCard components
@@ -40,6 +40,6 @@ const CarouselComponent = () => {
       />
     </Carousel>
   );
-}
+};
 
 export default CarouselComponent;
