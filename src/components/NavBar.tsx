@@ -16,12 +16,13 @@ const NavbarWrapper = styled.nav`
   position: relative;
 `;
 
-const Logo = styled(Image)`
+const Logo = styled.img`
   height: 40px;
   width: auto;
 
   @media (min-width: 768px) {
     height: 60px;
+    width: auto;
   }
 `;
 
@@ -77,9 +78,6 @@ const Navbar: React.FC = () => {
         <Logo
           src="/EctoEcologyLogoWhite.png"
           alt="EctoEcology Logo"
-          width={120}
-          height={60}
-          priority
         />
       </Link>
 

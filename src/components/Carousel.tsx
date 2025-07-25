@@ -42,6 +42,42 @@ const CarouselComponent = () => {
         title="Example 3"
         description="This is an example description for card 3."
       />
+      <CarouselCard
+        link="/secondPage"
+        image="/EctoE.png"
+        title="Example 4"
+        description="This is an example description for card 4."
+      />
+      <CarouselCard
+        link="/secondPage"
+        image="/EctoE.png"
+        title="Example 4"
+        description="This is an example description for card 4."
+      />
+      <CarouselCard
+        link="/secondPage"
+        image="/EctoE.png"
+        title="Example 4"
+        description="This is an example description for card 4."
+      />
+      <CarouselCard
+        link="/secondPage"
+        image="/EctoE.png"
+        title="Example 4"
+        description="This is an example description for card 4."
+      />
+      <CarouselCard
+        link="/secondPage"
+        image="/EctoE.png"
+        title="Example 4"
+        description="This is an example description for card 4."
+      />
+      <CarouselCard
+        link="/secondPage"
+        image="/EctoE.png"
+        title="Example 4"
+        description="This is an example description for card 4."
+      />
     </Carousel>
   );
 };

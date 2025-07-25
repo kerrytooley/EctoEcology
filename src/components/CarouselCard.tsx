@@ -4,14 +4,14 @@ import { styled } from "styled-components";
 // Styled carousel card components
 
 const Card = styled(Link)`
-margin: 0.5rem;
+  margin: 0.5rem;
   flex: 0 0 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: inherit;
   scroll-snap-align: start;
@@ -20,7 +20,7 @@ margin: 0.5rem;
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -38,13 +38,18 @@ const CardText = styled.div`
 `;
 
 interface CarouselCardProps {
-    link: string;
-    image: string;
-    title: string;
-    description: string;
+  link: string;
+  image: string;
+  title: string;
+  description: string;
 }
 
-const CarouselCard = ({ link, image, title, description }: CarouselCardProps) => {
+const CarouselCard = ({
+  link,
+  image,
+  title,
+  description,
+}: CarouselCardProps) => {
   return (
     <Card href={link}>
       <CardImage src={image} alt={title} />
@@ -54,6 +59,6 @@ const CarouselCard = ({ link, image, title, description }: CarouselCardProps) =>
       </CardText>
     </Card>
   );
-}
+};
 
 export default CarouselCard;
