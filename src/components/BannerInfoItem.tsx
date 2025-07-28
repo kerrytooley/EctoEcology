@@ -31,8 +31,22 @@ const ContainerDiv = styled.div<{ visible?: boolean }>`
 `;
 
 const Image = styled.img`
-  height: 50px;
+  height: 20px;
   width: auto;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    height: 15px;
+  }
+`;
+
+const BannerTitle = styled.h1`
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 interface BannerInfoItemProps {
@@ -62,7 +76,7 @@ const BannerInfoItem = ({
       </ContainerDiv>
       <ContainerDiv visible={!showDescription}>
         <Image src={vectorImage || "globe.svg"} alt={title} />
-        <h1>{title || "Default Title"}</h1>
+        <BannerTitle>{title || "Default Title"}</BannerTitle>
       </ContainerDiv>
     </BannerInfoItemContainer>
   );

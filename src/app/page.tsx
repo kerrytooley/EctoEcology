@@ -5,11 +5,13 @@ import styles from "./page.module.css";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { styled } from "styled-components";
 import CarouselComponent from "@/components/Carousel";
+import WhatWeDoInfo from "@/components/InfoCard";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <WhatWeDoInfo />
         <CarouselComponent />
         <Image
           className={styles.logo}

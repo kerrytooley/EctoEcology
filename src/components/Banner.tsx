@@ -53,7 +53,6 @@ const infoBanner = () => {
           description={prop.description}
         />
       ))}
-      ;
     </BannerContainer>
   );
 };

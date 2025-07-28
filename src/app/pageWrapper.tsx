@@ -2,6 +2,7 @@
 
 import Banner from "@/components/Banner";
 import NavBar from "@/components/NavBar";
+import { useMediaQuery } from "react-responsive";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { styled } from "styled-components";
 
@@ -23,11 +24,13 @@ const BackgroundImage = styled.img`
   opacity: 0.5;
 `;
 
+
 export default function LayoutWrapper({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const isDesktop = useMediaQuery({ minWidth: 768 });
   return (
     <div className="page-wrapper">
       <NavBar />
@@ -36,7 +39,9 @@ export default function LayoutWrapper({
       <ParallaxProvider>
         <BackgroundImage src="/forest.jpg" alt="Forest Background" />
         <PageWrapper>
-          <Parallax speed={-20}>{children}</Parallax>
+          <Parallax speed={-20} translateY={isDesktop ? [-20, 20] : [-10,20]}>
+            {children}
+          </Parallax>
         </PageWrapper>
       </ParallaxProvider>
     </div>
