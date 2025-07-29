@@ -7,8 +7,9 @@ import NavigationButton from "./NavigationButton";
 
 const BannerContainer = styled.div<{ variant?: "info" | "sales" }>`
   background-color: ${({ variant }) =>
-    variant === "info" ? "#4CAF50" : "green"};
-  color: white;
+    variant === "info" ? "#f4f3e8" : "#3c6a3f"};
+  color: ${({ variant }) =>
+    variant === "info" ? "#3c6a3f" : "#f4f3e8"};
   padding: 1rem;
   text-align: center;
   flex-direction: ${({ variant }) => (variant === "info" ? "row" : "column")};

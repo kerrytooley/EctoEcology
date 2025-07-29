@@ -18,7 +18,7 @@ const CardSet = styled.div`
 `;
 
 const InfoCard = styled.div`
-  background-color: #f1cfb4ff;
+  background-color: #f4f3e8;
   display: flex;
   flex-direction: column;
   align-items: center;

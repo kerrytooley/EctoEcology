@@ -14,6 +14,7 @@ const Carousel = styled.div`
   scrollbar-width: none; // Show scrollbar on Firefox
   width: fit-content;
   max-width: 100%;
+  margin-bottom: 2rem;
 
   @media (max-width: 600px) {
   gap: 0.5rem;
@@ -41,42 +42,6 @@ const CarouselComponent = () => {
         image="/EctoE.png"
         title="Example 3"
         description="This is an example description for card 3."
-      />
-      <CarouselCard
-        link="/secondPage"
-        image="/EctoE.png"
-        title="Example 4"
-        description="This is an example description for card 4."
-      />
-      <CarouselCard
-        link="/secondPage"
-        image="/EctoE.png"
-        title="Example 4"
-        description="This is an example description for card 4."
-      />
-      <CarouselCard
-        link="/secondPage"
-        image="/EctoE.png"
-        title="Example 4"
-        description="This is an example description for card 4."
-      />
-      <CarouselCard
-        link="/secondPage"
-        image="/EctoE.png"
-        title="Example 4"
-        description="This is an example description for card 4."
-      />
-      <CarouselCard
-        link="/secondPage"
-        image="/EctoE.png"
-        title="Example 4"
-        description="This is an example description for card 4."
-      />
-      <CarouselCard
-        link="/secondPage"
-        image="/EctoE.png"
-        title="Example 4"
-        description="This is an example description for card 4."
       />
     </Carousel>
   );
