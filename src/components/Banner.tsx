@@ -2,15 +2,14 @@
 
 import styled from "styled-components";
 import BannerInfoItem from "./BannerInfoItem";
-import Link from "next/link";
 import NavigationButton from "./NavigationButton";
+import { SectionTitle, Text } from "./SectionTitle";
 
 const BannerContainer = styled.div<{ variant?: "info" | "sales" }>`
   background-color: ${({ variant }) =>
-    variant === "info" ? "#f4f3e8" : "#3c6a3f"};
-  color: ${({ variant }) =>
-    variant === "info" ? "#3c6a3f" : "#f4f3e8"};
-  padding: 1rem;
+    variant === "info" ? "#f4f3e8" : "#24582a"};
+  color: ${({ variant }) => (variant === "info" ? "#24582a" : "#f4f3e8")};
+  padding: 0.5rem;
   text-align: center;
   flex-direction: ${({ variant }) => (variant === "info" ? "row" : "column")};
   display: flex;
@@ -28,19 +27,21 @@ interface BannerProps {
 
 const infoItemProps = [
   {
-    vectorImage: "globe.svg",
-    title: "EctoEcology",
-    description: "Explore the world of ectoplasm and ecology.",
+    vectorImage: "clock.svg",
+    title: "Ten day report turnaround",
+    description: "Receive your report within ten days of the survey date.",
   },
   {
-    vectorImage: "vercel.svg",
-    title: "Sustainability",
-    description: "Learn about sustainable practices in ectoplasm management.",
+    vectorImage: "coins.svg",
+    title: "Price cut guarantee",
+    description:
+      "You won't find a better quote than us! But if you do - we'll beat it by 20%.",
   },
   {
-    vectorImage: "window.svg",
-    title: "Research",
-    description: "Discover the latest research in ectoplasm and ecology.",
+    vectorImage: "uk2.svg",
+    title: "South UK coverage",
+    description:
+      "We offer services across the south of the UK and the Midlands.",
   },
 ];
 
@@ -49,6 +50,7 @@ const infoBanner = () => {
     <BannerContainer variant="info">
       {infoItemProps.map((prop) => (
         <BannerInfoItem
+          key={prop.title}
           vectorImage={prop.vectorImage}
           title={prop.title}
           description={prop.description}
@@ -61,8 +63,14 @@ const infoBanner = () => {
 const salesBanner = ({ title, description, link }: BannerProps) => {
   return (
     <BannerContainer>
-      <h1>{title || "Sales Banner"}</h1>
-      <p>{description || "This is a sales banner description."}</p>
+      <h1 style={{ padding: 10 }}>
+        {title ||
+          "- Limited Availability 2025 - Now Scheduling Bat Surveys (BERS) -"}
+      </h1>
+      <p>
+        {description ||
+          "Planning a project that may require a bat survey? Ensure you're compliant and on schedule—submit your survey request today."}
+      </p>
       <NavigationButton />
     </BannerContainer>
   );

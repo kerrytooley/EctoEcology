@@ -1,17 +1,17 @@
 "use client";
 
 import styled from "styled-components";
+import SectionTitle from "./SectionTitle";
 
 const CardSet = styled.div`
-    justify-content:center;
-    display: flex;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    flex-direction: row;
-    margin-bottom: 2rem;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  flex-direction: row;
+  margin-bottom: 2rem;
 
-    
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -22,16 +22,22 @@ const InfoCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex: 0 0 250px;
+  justify-content: flex-start;
+  text-align: center;
+  flex: 0 0 300px;
   padding: 1rem;
-  margin: 1rem; 
+  margin: 1rem;
+
+  @media (max-width: 768px) {
+  flex: 0 0 200px;
+  }
 `;
 
 const VectorImage = styled.img`
-  height: 20px;
+  height: 3rem;
   width: auto;
   margin-bottom: 0.5rem;
+  margin: 1rem;
 
   @media (max-width: 768px) {
     height: 15px;
@@ -46,19 +52,19 @@ interface InfoCardProps {
 
 const InfoCardData = [
   {
-    title: "Card 1",
-    description: "This is my first card",
-    vectorImage: "/next.svg",
+    title: "Complete our quote form or email us now",
+    description: "Complete our quote form below or email us admin@ectoecology.com and we'll respond with a free bat survey quote within 48 hours.",
+    vectorImage: "/laptop.svg",
   },
   {
-    title: "Card 2",
-    description: "This is my second card",
-    vectorImage: "/next.svg",
+    title: "Schedule your survey",
+    description: "We'll agree the details and arrange the dates for your survey(s).",
+    vectorImage: "/bat.svg",
   },
   {
-    title: "Card 3",
-    description: "This is my third card",
-    vectorImage: "/next.svg",
+    title: "Get your report",
+    description: "Once your survey is complete we'll write up your report, get it reviewed, and send it over within ten days.",
+    vectorImage: "/report.svg",
   },
 ];
 
@@ -66,7 +72,7 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
   return (
     <InfoCard>
       <VectorImage src={vectorImage} />
-      <h1>{title}</h1>
+      <h3>{title}</h3>
       <p>{description}</p>
     </InfoCard>
   );
@@ -74,9 +80,11 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
 
 const WhatWeDoInfo = () => {
   return (
+    <><SectionTitle>What we do</SectionTitle>
     <CardSet>
       {InfoCardData.map((data) => (
         <MyInfoCard
+          key={data.title}
           title={data.title}
           description={data.description}
           vectorImage={data.vectorImage}
@@ -84,6 +92,7 @@ const WhatWeDoInfo = () => {
       ))}
       ;
     </CardSet>
+    </>
   );
 };
 

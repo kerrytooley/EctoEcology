@@ -1,22 +1,26 @@
+import { colors } from "@/styles/theme";
 import Link from "next/link";
 import { styled } from "styled-components";
+import SectionTitle, { SectionSubtitle } from "./SectionTitle";
 
 // Styled carousel card components
 
 const Card = styled(Link)`
   margin: 0.5rem;
-  flex: 0 0 250px;
+  flex: 0 0 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 1rem;
+  align-items: left;
+  justify-items: flex-start;
+  background: ${colors.dark};
+  border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  color: inherit;
+  color: ${colors.light};
   scroll-snap-align: start;
   transition: transform 0.2s;
   cursor: pointer;
+  z-index: 999;
 
   &:hover {
     transform: scale(1.05);
@@ -26,7 +30,7 @@ const Card = styled(Link)`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -34,28 +38,25 @@ const CardImage = styled.img`
 
 const CardText = styled.div`
   padding: 1rem;
-  text-align: center;
+  text-align: left;
 `;
 
 interface CarouselCardProps {
   link: string;
   image: string;
   title: string;
-  description: string;
 }
 
 const CarouselCard = ({
   link,
   image,
-  title,
-  description,
+  title
 }: CarouselCardProps) => {
   return (
     <Card href={link}>
       <CardImage src={image} alt={title} />
       <CardText>
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <SectionTitle $variant="light">{title}</SectionTitle>
       </CardText>
     </Card>
   );

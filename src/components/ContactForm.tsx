@@ -1,32 +1,56 @@
-"use-client";
+"use client";
 
 import { styled } from "styled-components";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
-const FormContainer = styled.div`
-  background-color: #f4f3e8;
-  border-radius: 1rem;
-  display: flex;
-  width: inherit%;
-  max-width: 100%;
-`;
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
+import { colors } from "@/styles/theme";
 
 const Form = styled.form`
-background-color = white;
-display: flex;
-flex-direction: column;
-padding: 2rem;
-`;
-
-const FormInput = styled.input`
+  background-color: ${colors.dark};
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
+  width: 100%;
+  max-width: 600px;
   margin: 1rem;
 `;
 
+const FormInput = styled.input`
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 1px lightgray solid;
+`;
+
+const FormTextArea = styled.textarea`
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 1px lightgray solid;
+  height: 80px;
+`;
+
 const FormButton = styled.button`
-  height: 100px;
+  height: 50px;
+  border-radius: 2rem;
+  background-color: ${colors.light};
+  color: ${colors.dark};
+  width: 40%;
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &&:hover {
+  transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    background-color: ${colors.sales};
+`;
+
+const ErrorAlert = styled.p`
+  color: red;
 `;
 
 const contactFormSchema = z.object({
@@ -57,8 +81,9 @@ const ContactForm = () => {
       };
 
       const response = await fetch("/api/contact", request);
+      const errorText = response.text;
 
-      if (!response.ok) throw new Error("Submit request failed");
+      if (!response.ok) throw new Error(`Submit request failed ${errorText}`);
       reset();
       alert("Message sent! Thanks for contacting us.");
     } catch (error) {
@@ -68,17 +93,31 @@ const ContactForm = () => {
   };
 
   return (
-    <FormContainer>
+    <>
+      <SectionTitle>Contact Us</SectionTitle>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <FormInput placeholder="First Name:" {...register("firstName")} />
-        <FormInput placeholder="Last Name:" {...register("lastName")} />
-        <FormInput placeholder="Email" {...register("email")} />
-        <FormInput placeholder="Message" {...register("message")} />
+        <SectionSubtitle>
+          Contact us now for a free bat survey quote within 48 hours
+        </SectionSubtitle>
+        <Text $variant="light">First Name*</Text>
+        {errors.firstName && (
+          <ErrorAlert>{errors.firstName.message}</ErrorAlert>
+        )}
+        <FormInput {...register("firstName")} />
+        <Text $variant="light">Last Name*</Text>
+        {errors.lastName && <ErrorAlert>{errors.lastName.message}</ErrorAlert>}
+        <FormInput {...register("lastName")} />
+        <Text $variant="light">Email*</Text>
+        {errors.email && <ErrorAlert>{errors.email.message}</ErrorAlert>}
+        <FormInput {...register("email")} />
+        <Text $variant="light">Tell us about your survey requirements*</Text>
+        {errors.message && <ErrorAlert>{errors.message.message}</ErrorAlert>}
+        <FormTextArea {...register("message")} />
         <FormButton type="submit" title="Submit">
           Submit
         </FormButton>
       </Form>
-    </FormContainer>
+    </>
   );
 };
 export default ContactForm;

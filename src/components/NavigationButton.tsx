@@ -1,20 +1,21 @@
 const Button = styled.button`
-  background-color: #ff5100ff;
+  background-color: ${colors.sales};
   color: white;
   padding: 0.5rem 1rem;
+  margin: 1rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2rem;
   transition: background-color 0.3s ease;
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  z-index: 1000;
   &:hover {
-    background-color: #ff3603ff;
+    background-color: ${colors.salesDark};
   }
 `;
+import { colors } from "@/styles/theme";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -26,7 +27,7 @@ interface NavigationButtonProps {
 const NavigationButton = ({ link, title }: NavigationButtonProps) => {
   return (
     <Button>
-      <Link href={link || "/secondScreen"}>{title || "Sales"}</Link>
+      <Link href={link || "/secondScreen"}>{title || "Get a FREE quote now"}</Link>
     </Button>
   );
 };
