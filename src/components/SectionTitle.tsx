@@ -1,7 +1,7 @@
 import { colors } from "@/styles/theme";
 import { styled } from "styled-components";
 
-export const SectionTitle = styled.h1<{$variant?: "light" | "dark"}>`
+export const SectionTitle = styled.h1<{ $variant?: "light" | "dark" }>`
   display: flex;
   width: 100%;
   max-width: 100vh;
@@ -16,11 +16,16 @@ export const SectionTitle = styled.h1<{$variant?: "light" | "dark"}>`
   font-size: 2rem;
 `;
 
-export const SectionSubtitle = styled.h3`
+export const SectionSubtitle = styled.h3<{ $variant?: "light" | "dark" }>`
   display: flex;
   width: 100%;
   text-align: left;
-  color: #f4f3e8;
+  ${({ $variant }) =>
+    $variant === "light"
+      ? `color: ${colors.light};
+`
+      : `color: ${colors.dark};
+      `}
   padding: 0.5rem;
 `;
 

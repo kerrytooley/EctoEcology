@@ -15,6 +15,10 @@ const Form = styled.form`
   width: 100%;
   max-width: 600px;
   margin: 1rem;
+
+  @media (max-width: 768px) {
+  max-width: 300px;
+  }
 `;
 
 const FormInput = styled.input`
