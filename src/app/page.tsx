@@ -7,6 +7,7 @@ import CarouselComponent from "@/components/Carousel";
 import ContactForm from "@/components/ContactForm";
 import HowItWorksCards from "@/components/HowItWorksCards";
 import WhatWeDoSection from "@/components/WhatWeDo";
+import RecentReviewsSection from "@/components/RecentReviews";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <HowItWorksCards />
         <CarouselComponent />
         <WhatWeDoSection />
+        <RecentReviewsSection />
         <ContactForm />
       </main>
 
