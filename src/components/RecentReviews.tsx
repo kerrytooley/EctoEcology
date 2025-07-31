@@ -4,13 +4,20 @@ import styled from "styled-components";
 import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
 import { colors } from "@/styles/theme";
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ReviewSlideshow = styled.div`
   display: flex;
+  padding: 1rem;
   background-color: ${colors.light};
+  flex-direction: row;
+  border-radius: 1rem;
+`;
+
+const SlideShowWrapper = styled.div`
+  display: flex;
   width: 100%;
   max-width: 782px;
-  padding: 1rem;
   margin: 1rem;
   overflow-x: hidden;
 `;
@@ -19,6 +26,7 @@ const SlideTrack = styled.div<{ $slideCount: number }>`
   transition: transform 0.5s ease-in-out;
   display: flex;
   transform: translateX(${(props) => -props.$slideCount * 100}%);
+  width: 100%;
 `;
 
 const Slide = styled.div`
@@ -33,7 +41,7 @@ const Slide = styled.div`
 const SlideTitle = styled.div`
   flex: 1;
   text-align: left;
-  align-items: center;
+  align-self: center;
 `;
 
 const SlideDescription = styled.div`
@@ -50,13 +58,11 @@ const NavButton = styled.button`
 
 const Review = [
   {
-    reviewerName: "John Doe",
-    reviewerDescription: "Project Manager at EcoBuild",
+    reviewerDescription: "Client from Cookham Berkshire, Planning received within weeks of BERS report:",
     review:
-      "EctoEcology provided an exceptional service for our bat survey needs. Their team was professional, knowledgeable, and delivered results quickly. Highly recommend!",
-  },
+     "I was very impressed by your communications with me, organised and clear combined with doing the report as quickly as possible. I was equally impressed by not only the thorough report at the end of the BERS survey but also by your reliability and efficiency throughout.  I wouldn’t hesitate to use your services again in the future and am happy to recommend you to anyone looking to do a bat survey."
+    },
   {
-    reviewerName: "John Doe",
     reviewerDescription: "Project Manager at EcoBuild",
     review:
       "EctoEcology provided an exceptional service for our bat survey needs. Their team was professional, knowledgeable, and delivered results quickly. Highly recommend!",
@@ -64,22 +70,17 @@ const Review = [
 ];
 
 interface ReviewProps {
-  reviewerName: string;
   reviewerDescription: string;
   review: string;
 }
 
 const ReviewSlide = ({
-  reviewerName,
   reviewerDescription,
   review,
 }: ReviewProps) => {
   return (
     <Slide>
       <SlideTitle>
-        <SectionTitle style={{ padding: "0.5rem" }}>
-          {reviewerName}
-        </SectionTitle>
         <SectionSubtitle>{reviewerDescription}</SectionSubtitle>
       </SlideTitle>
       <SlideDescription>
@@ -103,20 +104,27 @@ const RecentReviewsSection = () => {
   return (
     <>
       <SectionTitle>Recent Reviews</SectionTitle>
-      <NavButton onClick={prevSlide}>Prev</NavButton>
+
       <ReviewSlideshow>
-        <SlideTrack $slideCount={current}>
-          {Review.map((review) => (
-            <ReviewSlide
-              key={review.reviewerName}
-              reviewerName={review.reviewerName}
-              reviewerDescription={review.reviewerDescription}
-              review={review.review}
-            />
-          ))}
-        </SlideTrack>
+        <NavButton onClick={prevSlide}>
+          <ChevronLeft size={50} />
+        </NavButton>
+        <SlideShowWrapper>
+          <SlideTrack $slideCount={current}>
+            {Review.map((review) => (
+              <ReviewSlide
+                key={review.reviewerName}
+                reviewerName={review.reviewerName}
+                reviewerDescription={review.reviewerDescription}
+                review={review.review}
+              />
+            ))}
+          </SlideTrack>
+        </SlideShowWrapper>
+        <NavButton onClick={nextSlide}>
+          <ChevronRight size={50} />
+        </NavButton>
       </ReviewSlideshow>
-      <NavButton onClick={nextSlide}>Next</NavButton>
     </>
   );
 };
