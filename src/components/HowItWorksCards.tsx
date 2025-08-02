@@ -1,13 +1,13 @@
 "use client";
 
 import styled from "styled-components";
-import SectionTitle from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
 
 const CardSet = styled.div`
   justify-content: center;
   display: flex;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vh;
   overflow-x: hidden;
   flex-direction: row;
   margin-bottom: 2rem;
@@ -72,15 +72,16 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
   return (
     <InfoCard>
       <VectorImage src={vectorImage} />
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <SectionSubtitle style={{textAlign:"center", width:"fit-content"}}>{title}</SectionSubtitle>
+      <Text>{description}</Text>
     </InfoCard>
   );
 };
 
-const WhatWeDoInfo = () => {
+const HowItWorksCards = () => {
   return (
-    <><SectionTitle>What we do</SectionTitle>
+    <>
+    <SectionTitle>What we do</SectionTitle>
     <CardSet>
       {InfoCardData.map((data) => (
         <MyInfoCard
@@ -96,4 +97,4 @@ const WhatWeDoInfo = () => {
   );
 };
 
-export default WhatWeDoInfo;
+export default HowItWorksCards;

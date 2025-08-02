@@ -13,7 +13,7 @@ const Carousel = styled.div`
   -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
   scrollbar-width: none; // Show scrollbar on Firefox
   width: fit-content;
-  max-width: 100%;
+  max-width: 100vh;
   margin-bottom: 2rem;
 
   @media (max-width: 600px) {

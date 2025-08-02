@@ -12,7 +12,7 @@ export const SectionTitle = styled.h1<{ $variant?: "light" | "dark" }>`
 `
       : `color: ${colors.dark};
 `}
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 2rem;
 `;
 

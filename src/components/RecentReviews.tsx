@@ -12,6 +12,7 @@ const ReviewSlideshow = styled.div`
   background-color: ${colors.light};
   flex-direction: row;
   border-radius: 1rem;
+  max-width: 100vh;
 `;
 
 const SlideShowWrapper = styled.div`
@@ -111,10 +112,9 @@ const RecentReviewsSection = () => {
         </NavButton>
         <SlideShowWrapper>
           <SlideTrack $slideCount={current}>
-            {Review.map((review) => (
+            {Review.map((review, index) => (
               <ReviewSlide
-                key={review.reviewerName}
-                reviewerName={review.reviewerName}
+                key={index}
                 reviewerDescription={review.reviewerDescription}
                 review={review.review}
               />

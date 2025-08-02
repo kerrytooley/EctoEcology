@@ -13,7 +13,7 @@ const Form = styled.form`
   flex-direction: column;
   padding: 2rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 90vh;
   margin: 1rem;
 
   @media (max-width: 768px) {
@@ -121,6 +121,7 @@ const ContactForm = () => {
           Submit
         </FormButton>
       </Form>
+      <SectionTitle style={{textAlign:"center", width:"100%"}}>Alternatively email us at <a href="mailto:admin@ectoecology.com?subject=Survey%20Request&body=Hi%20there,%0AI'd%20like%20to%20book%20a%20survey."> admin@ectoecology.com</a></SectionTitle>
     </>
   );
 };

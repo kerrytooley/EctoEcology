@@ -1,38 +1,18 @@
-import { colors } from "@/styles/theme";
 import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
 import styled from "styled-components";
+import FindOutMoreButton from "./FindOutMoreButton";
 
 const InfoSection = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 900px;
+  max-width:  90vh;
   padding: 1rem;
   align-items: center;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-  }
-`;
-
-const FindOutMoreButton = styled.button`
-  background-color: ${colors.light};
-  color: ${colors.dark};
-  padding: 0.5rem 1rem;
-  margin: 1rem;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  height: fit-content;
-  width: 400px;
-
-  &:hover {
-    background-color: ${colors.salesDark};
   }
 `;
 
@@ -51,7 +31,7 @@ const WhatWeDoSection = () => {
           across Maidenhead, Berkshire, Buckinghamshire, Greater London and
           more.
         </SectionSubtitle>
-        <FindOutMoreButton>Find out more</FindOutMoreButton>
+        <FindOutMoreButton/>
       </InfoSection>
     </>
   );
