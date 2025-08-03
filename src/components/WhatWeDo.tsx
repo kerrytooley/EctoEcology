@@ -1,6 +1,5 @@
 import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
 import styled from "styled-components";
-import FindOutMoreButton from "./FindOutMoreButton";
 import NavigationButton from "./NavigationButton";
 
 const InfoSection = styled.section`
