@@ -8,7 +8,6 @@ import { colors } from "@/styles/theme";
 import NavigationButton from "./NavigationButton";
 import { ArrowRight } from "lucide-react";
 
-
 const OurServicesWrapper = styled.div`
   display: flex;
   position: relative;
@@ -22,7 +21,7 @@ const OurServicesWrapper = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     height: 600px;
-    }
+  }
 `;
 
 const ServicesColumn = styled.div`
@@ -42,40 +41,42 @@ const ImageColumn = styled.div`
 `;
 
 const BersLink = styled(Link)`
-color: ${colors.dark};
-text-decoration-line: underline;
-padding: 0.5rem;
-`
+  color: ${colors.dark};
+  text-decoration-line: underline;
+  padding: 0.5rem;
+`;
 
 const OurServicesSection = () => {
   return (
     <>
       <SectionTitle>Our Services</SectionTitle>
-        <OurServicesWrapper>
-          <ImageColumn>
-            <Image
-              src={"/forest.jpg"}
-              alt="Image of a bat"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </ImageColumn>
-          <ServicesColumn>
-            <Title>BERS/Phase 2 Bat Survey</Title>
-            <BersLink href={"secondScreen"}>
-              We specialise in Phase 2/BERS surveys for small to medium
-              developments across Southern England.{" "}
-            </BersLink>
-            <Text>
-              Once you have completed an initial Phase 1 survey we can take
-              over, we conduct dusk and dawn surveys between May - September
-            </Text>
-            <NavigationButton
-              link={"/secondScreen"}
-              title={"Find out more"}
-              type={"nav"}/>
-          </ServicesColumn>
-        </OurServicesWrapper>
+      <OurServicesWrapper>
+        <ImageColumn>
+          <Image
+            src={"/forest.jpg"}
+            alt="Image of a bat"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover" }}
+          />
+        </ImageColumn>
+        <ServicesColumn>
+          <Title>BERS/Phase 2 Bat Survey</Title>
+          <BersLink href={"secondScreen"}>
+            We specialise in Phase 2/BERS surveys for small to medium
+            developments across Southern England.{" "}
+          </BersLink>
+          <Text>
+            Once you have completed an initial Phase 1 survey we can take over,
+            we conduct dusk and dawn surveys between May - September
+          </Text>
+          <NavigationButton
+            link={"/secondScreen"}
+            title={"Find out more"}
+            type={"nav"}
+          />
+        </ServicesColumn>
+      </OurServicesWrapper>
     </>
   );
 };

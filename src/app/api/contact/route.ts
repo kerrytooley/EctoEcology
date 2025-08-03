@@ -12,12 +12,15 @@ export async function POST(req: NextRequest) {
       to: [process.env.MY_EMAIL_ADDRESS],
       subject: "New Contact Form Submission",
       replyTo: email,
-      html: `<p>hi this is an email from ${firstName} ${lastName} i want ${message}</p>`,
+      html: `<p>Hello,</p>
+      <p>You have received a new contact form submission from <strong>${firstName} ${lastName}</strong> (${email}).</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>`,
     });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(`booooooo: `, error);
+    console.error(`Failed to send contact form email: `, error);
     return NextResponse.json({ success: false, error: "Failed to send email" });
   }
 }

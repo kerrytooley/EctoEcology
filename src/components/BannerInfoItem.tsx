@@ -15,7 +15,7 @@ const BannerInfoItemContainer = styled.div`
   height: 80px;
 `;
 
-const ContainerDiv = styled.div<{ isVisible?: boolean }>`
+const ContainerDiv = styled.div`
   display: flex;
   position: absolute;
   width: 100%;
@@ -25,16 +25,13 @@ const ContainerDiv = styled.div<{ isVisible?: boolean }>`
   cursor: pointer;
   flex-direction: column;
   transition: opacity 0.4s ease;
-  ${({ isVisible }) =>
-    isVisible
-      ? `
+  opacity: 0;
+  pointer-events: none;
+
+  &.visible {
     opacity: 1;
     pointer-events: auto;
-  `
-      : `
-    opacity: 0;
-    pointer-events: none;
-  `}
+  }
 `;
 
 const Image = styled.img`
@@ -78,10 +75,10 @@ const BannerInfoItem = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <ContainerDiv isVisible={showDescription}>
+      <ContainerDiv className={showDescription ? "visible" : ""}>
         <p>{description || "This is a default description for the banner."}</p>
       </ContainerDiv>
-      <ContainerDiv isVisible={!showDescription}>
+      <ContainerDiv className={!showDescription ? "visible" : ""}>
         <Image src={vectorImage || "globe.svg"} alt={title} />
         <BannerTitle>{title || "Default Title"}</BannerTitle>
       </ContainerDiv>

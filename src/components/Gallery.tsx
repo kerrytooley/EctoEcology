@@ -1,10 +1,6 @@
 "use client";
 
-"use client";
-
 import styled from "styled-components";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
-import { colors } from "@/styles/theme";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -148,7 +144,7 @@ const Gallery = () => {
     setCurrent((prev) => (prev + 1) % totalSlides);
   };
   const prevSlide = () => {
-    setCurrent((prev) => (prev - 1) % totalSlides);
+    setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   return (

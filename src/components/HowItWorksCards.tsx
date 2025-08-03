@@ -91,7 +91,7 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
 const HowItWorksCards = () => {
   return (
     <>
-      <SectionTitle>What we do</SectionTitle>
+      <SectionTitle>How it works</SectionTitle>
       <CardSet>
         {InfoCardData.map((data) => (
           <MyInfoCard
@@ -101,7 +101,6 @@ const HowItWorksCards = () => {
             vectorImage={data.vectorImage}
           />
         ))}
-        ;
       </CardSet>
     </>
   );

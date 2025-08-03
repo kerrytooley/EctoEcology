@@ -3,17 +3,20 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import styled from "styled-components";
 
-const Button = styled.button<{ $type: "sales" | "nav" }>`
+const Button = styled.button`
   padding: 0.5rem 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
   font-size: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   display: flex;
   text-align: center;
   justify-content: center;
   z-index: 1000;
+  
   text {
     padding-top: 0;
   }
@@ -24,27 +27,29 @@ const Button = styled.button<{ $type: "sales" | "nav" }>`
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
 
-  ${({ $type }) =>
-    $type === "sales"
-      ? `
-      background-color: ${colors.sales};
-      color: white;
-      border: none;
-      border-radius: 2rem;
-      &&:hover {
-        background-color: ${colors.salesDark};
-    `
-      : `
-      background-color: ${colors.light};
-      color: ${colors.dark};
-      border: 1px solid ${colors.dark};
-      width: 300px;
-      border-radius: 0;
-      &&:hover {
-        background-color: ${colors.dark};
-        color: ${colors.light};
-      }
-    `}
+  &.sales {
+    background-color: ${colors.sales};
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    &&:hover {
+      background-color: ${colors.salesDark};
+    }
+  }
+
+  &.nav {
+    background-color: ${colors.light};
+    color: ${colors.dark};
+    border: 1px solid ${colors.dark};
+    width: 300px;
+    border-radius: 0;
+    &&:hover {
+      background-color: ${colors.dark};
+      color: ${colors.light};
+    }
+  }
+
+
 `;
 
 interface NavigationButtonProps {
@@ -55,7 +60,7 @@ interface NavigationButtonProps {
 
 const NavigationButton = ({ link, title, type }: NavigationButtonProps) => {
   return (
-    <Button $type={type} style={{ alignSelf: "center" }}>
+    <Button className={type} style={{ alignSelf: "center" }}>
       <Link href={link || "/secondScreen"}>
         {title || "Get a FREE quote now"}
       </Link>

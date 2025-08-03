@@ -81,7 +81,7 @@ const ContactForm = () => {
       };
 
       const response = await fetch("/api/contact", request);
-      const errorText = response.text;
+      const errorText = await response.text();
 
       if (!response.ok) throw new Error(`Submit request failed ${errorText}`);
       reset();
@@ -96,21 +96,21 @@ const ContactForm = () => {
     <>
       <SectionTitle>Contact Us</SectionTitle>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <SectionSubtitle $variant="light">
+        <SectionSubtitle className="light">
           Contact us now for a free bat survey quote within 48 hours
         </SectionSubtitle>
-        <Text $variant="light">First Name*</Text>
+        <Text className="light">First Name*</Text>
         {errors.firstName && (
           <ErrorAlert>{errors.firstName.message}</ErrorAlert>
         )}
         <FormInput {...register("firstName")} />
-        <Text $variant="light">Last Name*</Text>
+        <Text className="light">Last Name*</Text>
         {errors.lastName && <ErrorAlert>{errors.lastName.message}</ErrorAlert>}
         <FormInput {...register("lastName")} />
-        <Text $variant="light">Email*</Text>
+        <Text className="light">Email*</Text>
         {errors.email && <ErrorAlert>{errors.email.message}</ErrorAlert>}
         <FormInput {...register("email")} />
-        <Text $variant="light">Tell us about your survey requirements*</Text>
+        <Text className="light">Tell us about your survey requirements*</Text>
         {errors.message && <ErrorAlert>{errors.message.message}</ErrorAlert>}
         <FormTextArea {...register("message")} />
         <FormButton type="submit" title="Submit">

@@ -3,18 +3,30 @@
 import styled from "styled-components";
 import BannerInfoItem from "./BannerInfoItem";
 import NavigationButton from "./NavigationButton";
-import { Header, Title } from "./SectionTitles";
+import { Header } from "./SectionTitles";
+import { colors } from "@/styles/theme";
 
-const BannerContainer = styled.div<{ variant?: "info" | "sales" }>`
-  background-color: ${({ variant }) =>
-    variant === "info" ? "#f4f3e8" : "#24582a"};
-  color: ${({ variant }) => (variant === "info" ? "#24582a" : "#f4f3e8")};
+const BannerContainer = styled.div`
   padding: 0.5rem;
   text-align: center;
-  flex-direction: ${({ variant }) => (variant === "info" ? "row" : "column")};
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-color: ${colors.dark};
+  color: ${colors.light};
+
+  &.info {
+    flex-direction: row;
+    background-color: ${colors.light};
+    color: ${colors.dark};
+  }
+
+  &.sales {
+    flex-direction: column;
+    background-color: ${colors.dark};
+    color: ${colors.light};
+  }
 `;
 
 interface BannerProps {
@@ -47,7 +59,7 @@ const infoItemProps = [
 
 const infoBanner = () => {
   return (
-    <BannerContainer variant="info">
+    <BannerContainer className="info">
       {infoItemProps.map((prop) => (
         <BannerInfoItem
           key={prop.title}
@@ -62,8 +74,8 @@ const infoBanner = () => {
 
 const salesBanner = ({ title, description, link }: BannerProps) => {
   return (
-    <BannerContainer>
-      <Header $variant="light">
+    <BannerContainer className="sales">
+      <Header className="light">
         {title ||
           "- Limited Availability 2025 - Now Scheduling Bat Surveys (BERS) -"}
       </Header>
@@ -71,7 +83,7 @@ const salesBanner = ({ title, description, link }: BannerProps) => {
         {description ||
           "Planning a project that may require a bat survey? Ensure you're compliant and on schedule—submit your survey request today."}
       </p>
-      <NavigationButton type="sales"/>
+      <NavigationButton type="sales" />
     </BannerContainer>
   );
 };

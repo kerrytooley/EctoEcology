@@ -113,7 +113,7 @@ const RecentReviewsSection = () => {
     setCurrent((prev) => (prev + 1) % totalSlides);
   };
   const prevSlide = () => {
-    setCurrent((prev) => (prev - 1) % totalSlides);
+    setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   return (

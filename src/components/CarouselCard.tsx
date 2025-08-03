@@ -56,7 +56,7 @@ const CarouselCard = ({
     <Card href={link}>
       <CardImage src={image} alt={title} />
       <CardText>
-        <Title $variant="light">{title}</Title>
+        <Title className="light">{title}</Title>
       </CardText>
     </Card>
   );
