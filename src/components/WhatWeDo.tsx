@@ -1,12 +1,13 @@
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
 import styled from "styled-components";
 import FindOutMoreButton from "./FindOutMoreButton";
+import NavigationButton from "./NavigationButton";
 
 const InfoSection = styled.section`
   display: flex;
   flex-direction: row;
-  width: 100%;
-  max-width:  90vh;
+  width: 90%;
+  max-width: 1000px;
   padding: 1rem;
   align-items: center;
 
@@ -19,19 +20,27 @@ const InfoSection = styled.section`
 const WhatWeDoSection = () => {
   return (
     <>
-      <SectionTitle> How It Works</SectionTitle>
+      <SectionTitle> What we do</SectionTitle>
       <InfoSection>
-        <SectionSubtitle>
-          During a bat emergence re-entry survey, we evaluate bat species and
-          their habitats within a specified area, typically development
-          projects. We conduct field surveys to identify bat roosts, foraging
-          areas, and flight paths. The findings help assess potential impacts on
-          bat populations, and inform mitigation strategies to protect these
-          species and comply with conservation regulations. We offer bat surveys
-          across Maidenhead, Berkshire, Buckinghamshire, Greater London and
-          more.
-        </SectionSubtitle>
-        <FindOutMoreButton/>
+        <div style={{ flex: 2 }}>
+          <SectionSubtitle style={{width: "100%"}}>
+            During a bat emergence re-entry survey, we evaluate bat species and
+            their habitats within a specified area, typically development
+            projects. We conduct field surveys to identify bat roosts, foraging
+            areas, and flight paths. The findings help assess potential impacts
+            on bat populations, and inform mitigation strategies to protect
+            these species and comply with conservation regulations. We offer bat
+            surveys across Maidenhead, Berkshire, Buckinghamshire, Greater
+            London and more.
+          </SectionSubtitle>
+        </div>
+        <div style={{ flex: 1 }}>
+          <NavigationButton
+            link={"/secondScreen"}
+            title={"Find out more"}
+            type={"nav"}
+          />
+        </div>
       </InfoSection>
     </>
   );

@@ -3,7 +3,7 @@
 import { colors } from "@/styles/theme";
 import { styled } from "styled-components";
 import { ArrowRight } from "lucide-react";
-import { Text } from "./SectionTitle";
+import { Text } from "./SectionTitles";
 
 const Button = styled.button`
   background-color: ${colors.light};

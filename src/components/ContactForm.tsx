@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 
 const Form = styled.form`
@@ -12,13 +12,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  width: 100%;
-  max-width: 90vh;
+  width: 90%;
+  max-width: 800px;
   margin: 1rem;
-
-  @media (max-width: 768px) {
-  max-width: 300px;
-  }
 `;
 
 const FormInput = styled.input`
@@ -100,7 +96,7 @@ const ContactForm = () => {
     <>
       <SectionTitle>Contact Us</SectionTitle>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <SectionSubtitle>
+        <SectionSubtitle $variant="light">
           Contact us now for a free bat survey quote within 48 hours
         </SectionSubtitle>
         <Text $variant="light">First Name*</Text>
@@ -121,7 +117,15 @@ const ContactForm = () => {
           Submit
         </FormButton>
       </Form>
-      <SectionTitle style={{textAlign:"center", width:"100%"}}>Alternatively email us at <a href="mailto:admin@ectoecology.com?subject=Survey%20Request&body=Hi%20there,%0AI'd%20like%20to%20book%20a%20survey."> admin@ectoecology.com</a></SectionTitle>
+      <SectionTitle style={{ textAlign: "center", width: "100%" }}>
+        Alternatively email us at{" "}
+        <a
+          href="mailto:admin@ectoecology.com?subject=Survey%20Request&body=Hi%20there,%0AI'd%20like%20to%20book%20a%20survey."
+        >
+          {" "}
+          admin@ectoecology.com
+        </a>
+      </SectionTitle>
     </>
   );
 };

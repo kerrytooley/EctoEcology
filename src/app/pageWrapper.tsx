@@ -1,7 +1,6 @@
 "use client";
 
-import Banner from "@/components/Banner";
-import NavBar from "@/components/NavBar";
+import StickyHeader from "@/components/Header";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
@@ -9,9 +8,15 @@ import { styled } from "styled-components";
 
 const PageWrapper = styled.div`
   position: relative;
+  padding-top: 700px;
   min-height: 100vh;
   width: 100%;
+  max-width: 100vw;
   justify-content: center;
+  display: grid;
+
+  @media (max-width: 782px) {
+    padding-top: 1150px;
 `;
 
 const BackgroundImage = styled.img`
@@ -37,17 +42,15 @@ export default function LayoutWrapper({
     setHasMounted(true);
   }, []);
 
-  if (!hasMounted) return null; // Or render with default/safe values
+  if (!hasMounted) return null;
 
   return (
     <div className="page-wrapper">
+      <StickyHeader />
       <ParallaxProvider>
-        <NavBar />
-        <Banner variant="info" />
-        <Banner variant="sales" />
         <BackgroundImage src="/forest.jpg" alt="Forest Background" />
         <PageWrapper>
-          <Parallax speed={-20} translateY={isDesktop ? [-10, 20] : [-5, 20]}>
+          <Parallax speed={-20} translateY={isDesktop ? [-20, 20] : [-20, 20]}>
             {children}
           </Parallax>
         </PageWrapper>

@@ -3,7 +3,6 @@
 import styled from "styled-components";
 import BannerInfoItem from "./BannerInfoItem";
 import NavigationButton from "./NavigationButton";
-import { SectionTitle, Text } from "./SectionTitle";
 
 const BannerContainer = styled.div<{ variant?: "info" | "sales" }>`
   background-color: ${({ variant }) =>
@@ -71,7 +70,7 @@ const salesBanner = ({ title, description, link }: BannerProps) => {
         {description ||
           "Planning a project that may require a bat survey? Ensure you're compliant and on schedule—submit your survey request today."}
       </p>
-      <NavigationButton />
+      <NavigationButton type="sales"/>
     </BannerContainer>
   );
 };

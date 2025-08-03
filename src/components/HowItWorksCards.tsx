@@ -1,13 +1,14 @@
 "use client";
 
 import styled from "styled-components";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
+import { colors } from "@/styles/theme";
 
 const CardSet = styled.div`
   justify-content: center;
   display: flex;
   width: 100%;
-  max-width: 100vh;
+  max-width: 90vw;
   overflow-x: hidden;
   flex-direction: row;
   margin-bottom: 2rem;
@@ -18,7 +19,7 @@ const CardSet = styled.div`
 `;
 
 const InfoCard = styled.div`
-  background-color: #f4f3e8;
+  background-color: ${colors.light};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +30,7 @@ const InfoCard = styled.div`
   margin: 1rem;
 
   @media (max-width: 768px) {
-  flex: 0 0 200px;
+    flex: 0 0 200px;
   }
 `;
 
@@ -39,8 +40,12 @@ const VectorImage = styled.img`
   margin-bottom: 0.5rem;
   margin: 1rem;
 
+  svg {
+    color: ${colors.dark};
+  }
+
   @media (max-width: 768px) {
-    height: 15px;
+    height: 2rem;
   }
 `;
 
@@ -53,17 +58,20 @@ interface InfoCardProps {
 const InfoCardData = [
   {
     title: "Complete our quote form or email us now",
-    description: "Complete our quote form below or email us admin@ectoecology.com and we'll respond with a free bat survey quote within 48 hours.",
+    description:
+      "Complete our quote form below or email us admin@ectoecology.com and we'll respond with a free bat survey quote within 48 hours.",
     vectorImage: "/laptop.svg",
   },
   {
     title: "Schedule your survey",
-    description: "We'll agree the details and arrange the dates for your survey(s).",
+    description:
+      "We'll agree the details and arrange the dates for your survey(s).",
     vectorImage: "/bat.svg",
   },
   {
     title: "Get your report",
-    description: "Once your survey is complete we'll write up your report, get it reviewed, and send it over within ten days.",
+    description:
+      "Once your survey is complete we'll write up your report, get it reviewed, and send it over within ten days.",
     vectorImage: "/report.svg",
   },
 ];
@@ -72,7 +80,9 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
   return (
     <InfoCard>
       <VectorImage src={vectorImage} />
-      <SectionSubtitle style={{textAlign:"center", width:"fit-content"}}>{title}</SectionSubtitle>
+      <SectionSubtitle style={{ textAlign: "center", width: "fit-content" }}>
+        {title}
+      </SectionSubtitle>
       <Text>{description}</Text>
     </InfoCard>
   );
@@ -81,18 +91,18 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
 const HowItWorksCards = () => {
   return (
     <>
-    <SectionTitle>What we do</SectionTitle>
-    <CardSet>
-      {InfoCardData.map((data) => (
-        <MyInfoCard
-          key={data.title}
-          title={data.title}
-          description={data.description}
-          vectorImage={data.vectorImage}
-        />
-      ))}
-      ;
-    </CardSet>
+      <SectionTitle>What we do</SectionTitle>
+      <CardSet>
+        {InfoCardData.map((data) => (
+          <MyInfoCard
+            key={data.title}
+            title={data.title}
+            description={data.description}
+            vectorImage={data.vectorImage}
+          />
+        ))}
+        ;
+      </CardSet>
     </>
   );
 };

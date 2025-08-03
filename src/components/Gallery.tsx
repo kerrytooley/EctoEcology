@@ -3,7 +3,7 @@
 "use client";
 
 import styled from "styled-components";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -16,7 +16,7 @@ const GallerySlideshow = styled.div`
   border-radius: 1rem;
   height: 350px;
   width: 100%;
-  max-width: 100vh;
+  max-width: 100vw;
 `;
 
 const SlideShowWrapper = styled.div`
@@ -26,7 +26,7 @@ const SlideShowWrapper = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 `;
 
 const SlideTrack = styled.div<{ $slideCount: number }>`
@@ -34,6 +34,10 @@ const SlideTrack = styled.div<{ $slideCount: number }>`
   display: flex;
   transform: translateX(${(props) => -props.$slideCount * 20}%);
   width: 100%;
+
+  @media (max-width: 768px) {
+    transform: translateX(${(props) => -props.$slideCount * 100}%);
+  }
 `;
 
 const Slide = styled.div`
@@ -45,8 +49,21 @@ const Slide = styled.div`
 const NavButton = styled.button`
   border: none;
   background: none;
-  font-size: 2rem;
-  font-weight: bold;
+
+  svg {
+    width: 50px;
+    height: 50px;
+    transition:
+      width 0.2s,
+      height 0.2s;
+  }
+
+  @media (max-width: 782px) {
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
 `;
 
 const GalleryImage = styled(Image)`
@@ -55,7 +72,7 @@ const GalleryImage = styled(Image)`
   padding: 3px;
 `;
 
-const Images : ImageProps[] = [
+const Images: ImageProps[] = [
   {
     source: "/surveys/Survey1.jpg",
     alternateText: "Survey 1",
@@ -105,7 +122,12 @@ interface ImageProps {
 }
 
 const ImageSlide = ({ source, alternateText, orientation }: ImageProps) => {
-    const size = orientation === "portrait" ? "200" : orientation === "landscape" ? "400" : "300";
+  const size =
+    orientation === "portrait"
+      ? "200"
+      : orientation === "landscape"
+        ? "400"
+        : "300";
   return (
     <Slide>
       <GalleryImage

@@ -1,7 +1,7 @@
 import { colors } from "@/styles/theme";
 import Link from "next/link";
 import { styled } from "styled-components";
-import SectionTitle, { SectionSubtitle } from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Title } from "./SectionTitles";
 
 // Styled carousel card components
 
@@ -56,7 +56,7 @@ const CarouselCard = ({
     <Card href={link}>
       <CardImage src={image} alt={title} />
       <CardText>
-        <SectionTitle $variant="light">{title}</SectionTitle>
+        <Title $variant="light">{title}</Title>
       </CardText>
     </Card>
   );

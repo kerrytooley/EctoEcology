@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitle";
+import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -12,7 +12,7 @@ const ReviewSlideshow = styled.div`
   background-color: ${colors.light};
   flex-direction: row;
   border-radius: 1rem;
-  max-width: 100vh;
+  max-width: 90vw;
 `;
 
 const SlideShowWrapper = styled.div`
@@ -37,6 +37,9 @@ const Slide = styled.div`
   min-width: 100%;
   flex-shrink: 0;
   flex: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
 `;
 
 const SlideTitle = styled.div`
@@ -53,8 +56,19 @@ const SlideDescription = styled.div`
 const NavButton = styled.button`
   border: none;
   background: none;
-  font-size: 2rem;
-  font-weight: bold;
+
+    svg {
+    width: 50px;
+    height: 50px;
+    transition: width 0.2s, height 0.2s;
+  }
+
+  @media (max-width: 782px) {
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
 `;
 
 const Review = [
@@ -108,7 +122,7 @@ const RecentReviewsSection = () => {
 
       <ReviewSlideshow>
         <NavButton onClick={prevSlide}>
-          <ChevronLeft size={50} />
+          <ChevronLeft />
         </NavButton>
         <SlideShowWrapper>
           <SlideTrack $slideCount={current}>
@@ -122,7 +136,7 @@ const RecentReviewsSection = () => {
           </SlideTrack>
         </SlideShowWrapper>
         <NavButton onClick={nextSlide}>
-          <ChevronRight size={50} />
+          <ChevronRight/>
         </NavButton>
       </ReviewSlideshow>
     </>

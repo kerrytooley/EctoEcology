@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import CarouselCard from "./CarouselCard";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "./SectionTitles";
 
 // Styled carousel and card components
 const Carousel = styled.div`
@@ -13,7 +13,7 @@ const Carousel = styled.div`
   -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
   scrollbar-width: none; // Show scrollbar on Firefox
   width: fit-content;
-  max-width: 100vh;
+  max-width: 90vw;
   margin-bottom: 2rem;
 
   @media (max-width: 600px) {
