@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
+import SectionTitle, { Header, SectionSubtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 
 const Form = styled.form`
@@ -12,7 +12,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  width: 90%;
+  width: 90vw;
   max-width: 800px;
   margin: 1rem;
 `;
@@ -44,7 +44,7 @@ const FormButton = styled.button`
   transition: transform 0.2s, box-shadow 0.2s;
 
   &&:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     background-color: ${colors.sales};
 `;
@@ -117,15 +117,13 @@ const ContactForm = () => {
           Submit
         </FormButton>
       </Form>
-      <SectionTitle style={{ textAlign: "center", width: "100%" }}>
+      <Header style={{ width: "90vw" }}>
         Alternatively email us at{" "}
-        <a
-          href="mailto:admin@ectoecology.com?subject=Survey%20Request&body=Hi%20there,%0AI'd%20like%20to%20book%20a%20survey."
-        >
+        <a href="mailto:admin@ectoecology.com?subject=Survey%20Request&body=Hi%20there,%0AI'd%20like%20to%20book%20a%20survey.">
           {" "}
           admin@ectoecology.com
         </a>
-      </SectionTitle>
+      </Header>
     </>
   );
 };

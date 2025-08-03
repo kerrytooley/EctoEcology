@@ -13,11 +13,11 @@ const OurServicesWrapper = styled.div`
   display: flex;
   position: relative;
   flex-direction: row;
-  width: 90%;
+  width: 90vw;
   max-width: 1000px;
   background-color: ${colors.light};
   margin: 1rem;
-  height: 400px;
+  height: 350px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -31,7 +31,7 @@ const ServicesColumn = styled.div`
   margin: 1rem;
   padding: 1rem;
   font-size: 20px;
-  display: grid;
+  display: flex;
 `;
 
 const ImageColumn = styled.div`
@@ -44,6 +44,7 @@ const ImageColumn = styled.div`
 const BersLink = styled(Link)`
 color: ${colors.dark};
 text-decoration-line: underline;
+padding: 0.5rem;
 `
 
 const OurServicesSection = () => {

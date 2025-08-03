@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 const Button = styled.button<{ $type: "sales" | "nav" }>`
   padding: 0.5rem 1.5rem;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   font-size: 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -54,7 +55,7 @@ interface NavigationButtonProps {
 
 const NavigationButton = ({ link, title, type }: NavigationButtonProps) => {
   return (
-    <Button $type={type}>
+    <Button $type={type} style={{ alignSelf: "center" }}>
       <Link href={link || "/secondScreen"}>
         {title || "Get a FREE quote now"}
       </Link>

@@ -10,19 +10,31 @@ const NavbarWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-image: url("/forest.jpg");
-  background-size: cover;
-  background-position: center;
   position: relative;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+`;
+
+const BackgroundVideo = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
 `;
 
 const Logo = styled.img`
-  height: 40px;
+  height: 80px;
   width: auto;
 
-  @media (min-width: 768px) {
-    height: 60px;
-    width: auto;
+  @media (max-width: 768px) {
+    height: 50px;
   }
 `;
 
@@ -48,7 +60,6 @@ const NavLinks = styled.div<{ open: boolean }>`
   background: #111;
   padding: 1rem;
   gap: 1rem;
-  z-index: 1000;
 
   a {
     color: white;
@@ -64,7 +75,7 @@ const NavLinks = styled.div<{ open: boolean }>`
     padding: 0;
 
     a {
-      font-size: 1.1rem;
+      font-size: 2rem;
     }
   }
 `;
@@ -74,11 +85,12 @@ const Navbar: React.FC = () => {
 
   return (
     <NavbarWrapper>
+      <BackgroundVideo autoPlay loop muted playsInline>
+        <source src="/forestVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </BackgroundVideo>
       <Link href="/">
-        <Logo
-          src="/EctoEcologyLogoWhite.png"
-          alt="EctoEcology Logo"
-        />
+        <Logo src="/EctoEcologyLogoWhite.png" alt="EctoEcology Logo" />
       </Link>
 
       <Hamburger onClick={() => setMenuOpen((prev) => !prev)}>☰</Hamburger>

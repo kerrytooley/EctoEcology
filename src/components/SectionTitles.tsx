@@ -15,7 +15,6 @@ const commonStyles = css<{ $variant?: "light" | "dark" }>`
   }
 `;
 
-
 export const SectionTitle = styled.h1<{ $variant?: "light" | "dark" }>`
   ${commonStyles}
   margin-top: 3rem;
@@ -30,6 +29,14 @@ export const SectionSubtitle = styled.h3<{ $variant?: "light" | "dark" }>`
 export const Title = styled.h1<{ $variant?: "light" | "dark" }>`
   ${commonStyles}
   font-size: 2rem;
+`;
+
+export const Header = styled.h1<{ $variant?: "light" | "dark" }>`
+  ${commonStyles}
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Text = styled.p<{ $variant?: "light" | "dark" }>`

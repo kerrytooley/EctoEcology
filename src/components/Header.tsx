@@ -15,7 +15,7 @@ export default function StickyHeader() {
   return (
     <StickyHeaderContainer>
       <NavBar />
-      <Banner variant="info" />
+      <Banner variant="info" style={{ padding-top: "200px" }} />
       <Banner variant="sales" />
     </StickyHeaderContainer>
   );

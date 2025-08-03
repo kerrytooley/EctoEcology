@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import BannerInfoItem from "./BannerInfoItem";
 import NavigationButton from "./NavigationButton";
+import { Header, Title } from "./SectionTitles";
 
 const BannerContainer = styled.div<{ variant?: "info" | "sales" }>`
   background-color: ${({ variant }) =>
@@ -62,10 +63,10 @@ const infoBanner = () => {
 const salesBanner = ({ title, description, link }: BannerProps) => {
   return (
     <BannerContainer>
-      <h1 style={{ padding: 10 }}>
+      <Header $variant="light">
         {title ||
           "- Limited Availability 2025 - Now Scheduling Bat Surveys (BERS) -"}
-      </h1>
+      </Header>
       <p>
         {description ||
           "Planning a project that may require a bat survey? Ensure you're compliant and on schedule—submit your survey request today."}
