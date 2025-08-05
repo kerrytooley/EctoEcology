@@ -1,5 +1,7 @@
+"use client";
+
 import { colors } from "@/styles/theme";
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 
 const commonStyles = `
   max-width: 1000px;

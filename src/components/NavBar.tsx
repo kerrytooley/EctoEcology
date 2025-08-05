@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import Image from "next/image";
 
 const NavbarWrapper = styled.nav`
   display: flex;
@@ -96,8 +95,8 @@ const Navbar: React.FC = () => {
       <Hamburger onClick={() => setMenuOpen((prev) => !prev)}>☰</Hamburger>
 
       <NavLinks open={menuOpen}>
-        <Link href="/about">About</Link>
-        <Link href="/services">Services</Link>
+        <Link href="/">Home</Link>
+        <Link href="/bers2">Bat Surveys (BERS/Phase 2)</Link>
         <Link href="/contact">Contact</Link>
       </NavLinks>
     </NavbarWrapper>

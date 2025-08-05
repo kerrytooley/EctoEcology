@@ -19,7 +19,7 @@ const InfoSection = styled.section`
 const WhatWeDoSection = () => {
   return (
     <>
-      <SectionTitle> What we do</SectionTitle>
+      <SectionTitle>What we do</SectionTitle>
       <InfoSection>
         <div style={{ flex: 2 }}>
           <SectionSubtitle style={{width: "100%"}}>
@@ -35,7 +35,7 @@ const WhatWeDoSection = () => {
         </div>
         <div style={{ flex: 1 }}>
           <NavigationButton
-            link={"/secondScreen"}
+            link={"/bers2"}
             title={"Find out more"}
             type={"nav"}
           />

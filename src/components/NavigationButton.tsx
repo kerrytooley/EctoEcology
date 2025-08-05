@@ -61,7 +61,7 @@ interface NavigationButtonProps {
 const NavigationButton = ({ link, title, type }: NavigationButtonProps) => {
   return (
     <Button className={type} style={{ alignSelf: "center" }}>
-      <Link href={link || "/secondScreen"}>
+      <Link href={link || "/bers2"}>
         {title || "Get a FREE quote now"}
       </Link>
       <ChevronRight />
