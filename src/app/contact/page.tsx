@@ -1,7 +1,7 @@
 "use client";
 
 import NavigationButton from "@/components/NavigationButton";
-import SectionTitle, { Header, SectionSubtitle, Text } from "@/components/SectionTitles";
+import SectionTitle, { Header, Text } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";
 
 export default function ContactPage() {

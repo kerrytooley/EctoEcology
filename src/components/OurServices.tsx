@@ -6,7 +6,6 @@ import SectionTitle, { Text, Title } from "./SectionTitles";
 import Link from "next/link";
 import { colors } from "@/styles/theme";
 import NavigationButton from "./NavigationButton";
-import { describe } from "node:test";
 
 const OurServicesWrapper = styled.div`
   display: flex;
@@ -61,11 +60,7 @@ const HomeContent = () => {
         Once you have completed an initial Phase 1 survey we can take over, we
         conduct dusk and dawn surveys between May - September.
       </Text>
-      <NavigationButton
-        link={"/bers2"}
-        title={"Find out more"}
-        type={"nav"}
-      />
+      <NavigationButton link={"/bers2"} title={"Find out more"} type={"nav"} />
     </>
   );
 };
@@ -80,7 +75,7 @@ const BersContent = () => {
       </Text>
       <Text>
         With all the correct equipment and experience working on some of the UKs
-        largest ecology projects, we've got you covered.
+        largest ecology projects, we&apos;ve got you covered.
       </Text>
       <Text>
         Once you have completed an initial survey we can take over, we conduct

@@ -1,4 +1,4 @@
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
+import SectionTitle, { SectionSubtitle } from "./SectionTitles";
 import styled from "styled-components";
 import NavigationButton from "./NavigationButton";
 

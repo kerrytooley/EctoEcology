@@ -4,7 +4,6 @@ import NavigationButton from "@/components/NavigationButton";
 import OurServicesSection from "@/components/OurServices";
 import SectionTitle, { Text } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";
-import { AlignHorizontalDistributeCenter, Navigation } from "lucide-react";
 import { styled } from "styled-components";
 
 const NumberList = styled.ol`

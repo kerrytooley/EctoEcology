@@ -1,7 +1,7 @@
 import { colors } from "@/styles/theme";
 import Link from "next/link";
 import { styled } from "styled-components";
-import SectionTitle, { SectionSubtitle, Title } from "./SectionTitles";
+import { Title } from "./SectionTitles";
 
 // Styled carousel card components
 
