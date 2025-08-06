@@ -94,7 +94,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <SectionTitle>Contact Us</SectionTitle>
+      <SectionTitle id="contact-form">Contact Us</SectionTitle>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <SectionSubtitle className="light">
           Contact us now for a free bat survey quote within 48 hours

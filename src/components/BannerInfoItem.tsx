@@ -2,6 +2,8 @@
 
 import { styled } from "styled-components";
 import { useState } from "react";
+import { Ban } from "lucide-react";
+import { useMediaQuery } from "react-responsive";
 
 const BannerInfoItemContainer = styled.div`
   cursor: pointer;
@@ -53,6 +55,12 @@ const BannerTitle = styled.p`
   }
 `;
 
+const BannerDescription = styled.p`
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+`;
+
 interface BannerInfoItemProps {
   vectorImage?: string;
   title?: string;
@@ -64,10 +72,13 @@ const BannerInfoItem = ({
   title,
   description,
 }: BannerInfoItemProps) => {
+
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const showDescription = isClicked || isHovered;
+  const isDesktop = useMediaQuery({ minWidth: 768 });
+
+  const showDescription = isDesktop ? isClicked || isHovered : isClicked;
 
   return (
     <BannerInfoItemContainer
@@ -76,7 +87,9 @@ const BannerInfoItem = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <ContainerDiv className={showDescription ? "visible" : ""}>
-        <p>{description || "This is a default description for the banner."}</p>
+        <BannerDescription>
+          {description || "This is a default description for the banner."}
+        </BannerDescription>
       </ContainerDiv>
       <ContainerDiv className={!showDescription ? "visible" : ""}>
         <Image src={vectorImage || "globe.svg"} alt={title} />

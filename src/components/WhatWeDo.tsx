@@ -19,7 +19,7 @@ const InfoSection = styled.section`
 const WhatWeDoSection = () => {
   return (
     <>
-      <SectionTitle>What we do</SectionTitle>
+      <SectionTitle id="what-we-do">What we do</SectionTitle>
       <InfoSection>
         <div style={{ flex: 2 }}>
           <SectionSubtitle style={{width: "100%"}}>

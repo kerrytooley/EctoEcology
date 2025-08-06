@@ -28,6 +28,10 @@ export const SectionTitle = styled.h1`
   margin-top: 3rem;
   font-size: 2rem;
   width: 80%;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 export const SectionSubtitle = styled.h3`
@@ -37,6 +41,10 @@ export const SectionSubtitle = styled.h3`
 export const Title = styled.h1`
   ${commonStyles}
   font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Header = styled.h1<{ $variant?: "light" | "dark" }>`

@@ -15,6 +15,7 @@ const BannerContainer = styled.div`
   flex-direction: column;
   background-color: ${colors.dark};
   color: ${colors.light};
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 
   &.info {
     flex-direction: row;

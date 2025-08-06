@@ -14,7 +14,6 @@ const Carousel = styled.div`
   scrollbar-width: none; // Show scrollbar on Firefox
   width: fit-content;
   max-width: 90vw;
-  margin-bottom: 2rem;
 
   @media (max-width: 600px) {
     gap: 0.5rem;
@@ -25,7 +24,7 @@ const Carousel = styled.div`
 const CarouselComponent = () => {
   return (
     <>
-      <SectionTitle>See our work</SectionTitle>
+      <SectionTitle id="see-our-work">See our work</SectionTitle>
       <Carousel>
         <CarouselCard
           link="/secondPage"

@@ -20,7 +20,10 @@ const Card = styled(Link)`
   scroll-snap-align: start;
   transition: transform 0.2s;
   cursor: pointer;
-  z-index: 999;
+
+  @media (max-width: 768px) {
+    flex: 0 0 250px;
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -34,6 +37,10 @@ const CardImage = styled.img`
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
 `;
 
 const CardText = styled.div`

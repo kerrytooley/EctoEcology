@@ -57,10 +57,12 @@ const NavButton = styled.button`
   border: none;
   background: none;
 
-    svg {
+  svg {
     width: 50px;
     height: 50px;
-    transition: width 0.2s, height 0.2s;
+    transition:
+      width 0.2s,
+      height 0.2s;
   }
 
   @media (max-width: 782px) {
@@ -73,10 +75,11 @@ const NavButton = styled.button`
 
 const Review = [
   {
-    reviewerDescription: "Client from Cookham Berkshire, Planning received within weeks of BERS report:",
+    reviewerDescription:
+      "Client from Cookham Berkshire, Planning received within weeks of BERS report:",
     review:
-     "I was very impressed by your communications with me, organised and clear combined with doing the report as quickly as possible. I was equally impressed by not only the thorough report at the end of the BERS survey but also by your reliability and efficiency throughout.  I wouldn’t hesitate to use your services again in the future and am happy to recommend you to anyone looking to do a bat survey."
-    },
+      "I was very impressed by your communications with me, organised and clear combined with doing the report as quickly as possible. I was equally impressed by not only the thorough report at the end of the BERS survey but also by your reliability and efficiency throughout.  I wouldn’t hesitate to use your services again in the future and am happy to recommend you to anyone looking to do a bat survey.",
+  },
   {
     reviewerDescription: "Project Manager at EcoBuild",
     review:
@@ -89,10 +92,7 @@ interface ReviewProps {
   review: string;
 }
 
-const ReviewSlide = ({
-  reviewerDescription,
-  review,
-}: ReviewProps) => {
+const ReviewSlide = ({ reviewerDescription, review }: ReviewProps) => {
   return (
     <Slide>
       <SlideTitle>
@@ -118,8 +118,7 @@ const RecentReviewsSection = () => {
 
   return (
     <>
-      <SectionTitle>Recent Reviews</SectionTitle>
-
+      <SectionTitle id="recent-reviews">Recent Reviews</SectionTitle>
       <ReviewSlideshow>
         <NavButton onClick={prevSlide}>
           <ChevronLeft />
@@ -136,7 +135,7 @@ const RecentReviewsSection = () => {
           </SlideTrack>
         </SlideShowWrapper>
         <NavButton onClick={nextSlide}>
-          <ChevronRight/>
+          <ChevronRight />
         </NavButton>
       </ReviewSlideshow>
     </>

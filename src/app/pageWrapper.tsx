@@ -1,5 +1,6 @@
 "use client";
 
+import Banner from "@/components/Banner";
 import StickyHeader from "@/components/Header";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -8,15 +9,14 @@ import { styled } from "styled-components";
 
 const PageWrapper = styled.div`
   position: relative;
-  padding-top: 700px;
-  min-height: 100vh;
+  padding-top: var(--header-height);
   width: 100%;
   max-width: 100vw;
   justify-content: center;
   display: grid;
 
   @media (max-width: 782px) {
-    padding-top: 1150px;
+    padding-top: var(--header-height);
 `;
 
 const BackgroundImage = styled.img`
@@ -49,11 +49,9 @@ export default function LayoutWrapper({
       <StickyHeader />
       <ParallaxProvider>
         <BackgroundImage src="/forest.jpg" alt="Forest Background" />
-        <PageWrapper>
-          <Parallax speed={-20} translateY={isDesktop ? [-20, 20] : [-20, 20]}>
-            {children}
-          </Parallax>
-        </PageWrapper>
+        <Parallax speed={-20} translateY={isDesktop ? [-0, 0] : [0, 0]}>
+          <PageWrapper>{children}</PageWrapper>
+        </Parallax>
       </ParallaxProvider>
     </div>
   );

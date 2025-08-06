@@ -19,7 +19,7 @@ const OurServicesWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    height: 600px;
+    height: 500px;
   }
 `;
 
@@ -88,7 +88,7 @@ const BersContent = () => {
 const OurServicesSection = ({ variant }: OurServicesProps) => {
   return (
     <>
-      <SectionTitle>Our Services</SectionTitle>
+      <SectionTitle id="our-services">Our Services</SectionTitle>
       <OurServicesWrapper>
         <ImageColumn>
           <Image
