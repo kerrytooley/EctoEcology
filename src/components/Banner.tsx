@@ -76,7 +76,7 @@ const infoBanner = () => {
 const salesBanner = ({ title, description, link }: BannerProps) => {
   return (
     <BannerContainer className="sales">
-      <Header className="light">
+      <Header className="light" style={{textAlign: "center"}}>
         {title ||
           "- Limited Availability 2025 - Now Scheduling Bat Surveys (BERS) -"}
       </Header>

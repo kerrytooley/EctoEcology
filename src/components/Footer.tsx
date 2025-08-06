@@ -69,10 +69,10 @@ const Footer: React.FC = () => {
         <source src="/forestVideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </BackgroundVideo>
-      <Title className="light" style={{ paddingBottom: 0 }}>
+      <Title className="light" style={{ paddingBottom: 0, marginTop: 0, textAlign: "center" }}>
         Contact us today at
       </Title>
-      <Title className="light" style={{ paddingTop: 0 }}>
+      <Title className="light" style={{ paddingTop: 0, marginTop: 0, textAlign: "center" }}>
         <Link href="mailto:admin@ectoecology.com">admin@ectoecology.com</Link>
       </Title>
       <NavLinks>

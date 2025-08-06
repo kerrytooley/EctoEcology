@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
+import SectionTitle, { Subtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -96,7 +96,7 @@ const ReviewSlide = ({ reviewerDescription, review }: ReviewProps) => {
   return (
     <Slide>
       <SlideTitle>
-        <SectionSubtitle>{reviewerDescription}</SectionSubtitle>
+        <Subtitle className="dark">{reviewerDescription}</Subtitle>
       </SlideTitle>
       <SlideDescription>
         <Text>{review}</Text>

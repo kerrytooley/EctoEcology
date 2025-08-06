@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import SectionTitle, { SectionSubtitle, Text } from "./SectionTitles";
+import SectionTitle, { Subtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 
 const CardSet = styled.div`
@@ -79,9 +79,9 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
   return (
     <InfoCard>
       <VectorImage src={vectorImage} />
-      <SectionSubtitle style={{ textAlign: "center", width: "fit-content" }}>
+      <Subtitle style={{ textAlign: "center", width: "fit-content" }}>
         {title}
-      </SectionSubtitle>
+      </Subtitle>
       <Text>{description}</Text>
     </InfoCard>
   );

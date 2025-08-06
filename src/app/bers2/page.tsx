@@ -2,7 +2,7 @@
 
 import NavigationButton from "@/components/NavigationButton";
 import OurServicesSection from "@/components/OurServices";
-import SectionTitle, { Text } from "@/components/SectionTitles";
+import SectionTitle, { Text, Title } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";
 import { styled } from "styled-components";
 
@@ -29,9 +29,9 @@ export default function Bers2Screen() {
           margin: "1rem auto",
         }}
       >
-        <SectionTitle style={{ marginTop: 0 }}>
+        <Title style={{ marginTop: 0 }}>
           BERS/Phase 2 Bat Survey
-        </SectionTitle>
+        </Title>
         <Text>
           In the UK, a Phase 2 bat survey is a detailed investigation conducted
           to assess the presence, distribution, and activity of bats within a
@@ -40,7 +40,7 @@ export default function Bers2Screen() {
           Roost Assessments) indicate that bats might be present and potentially
           impacted by proposed developments.
         </Text>
-        <SectionTitle>Purpose of a Phase 2 Bat Survey</SectionTitle>
+        <Title>Purpose of a Phase 2 Bat Survey</Title>
         <Text>The main objectives of a Phase 2 bat survey are to:</Text>
         <NumberList>
           <li>Confirm the presence or likely absence of bats.</li>
@@ -54,7 +54,7 @@ export default function Bers2Screen() {
             proposed development.
           </li>
         </NumberList>
-        <SectionTitle>Methods Used in Phase 2 Bat Surveys</SectionTitle>
+        <Title>Methods Used in Phase 2 Bat Surveys</Title>
         <Text>
           Phase 2 bat surveys involve more intensive and specific methods
           compared to Phase 1 surveys. Common techniques include:
@@ -128,7 +128,7 @@ export default function Bers2Screen() {
             </li>
           </BulletList>
         </NumberList>
-        <SectionTitle>Timing and Seasonal Considerations</SectionTitle>
+        <Title>Timing and Seasonal Considerations</Title>
         <Text>
           Phase 2 bat surveys are usually conducted during the bat active
           season, which runs from May to September, with the peak activity

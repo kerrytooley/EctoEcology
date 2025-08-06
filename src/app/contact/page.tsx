@@ -1,7 +1,7 @@
 "use client";
 
 import NavigationButton from "@/components/NavigationButton";
-import SectionTitle, { Header, Text } from "@/components/SectionTitles";
+import { Header, Text } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";
 import styled from "styled-components";
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
         }}
       >
-        <SectionTitle style={{ marginTop: 0 }}>Contact Us</SectionTitle>
+        <Header>Contact Us</Header>
         <SectionWrapper>
           <div style={{ flex: 1 }}>
             <Text>

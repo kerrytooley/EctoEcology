@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import SectionTitle, { Header, SectionSubtitle, Text } from "./SectionTitles";
+import SectionTitle, { SectionHeader, Subtitle, Text } from "./SectionTitles";
 import { colors } from "@/styles/theme";
 
 const Form = styled.form`
@@ -96,9 +96,9 @@ const ContactForm = () => {
     <>
       <SectionTitle id="contact-form">Contact Us</SectionTitle>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <SectionSubtitle className="light">
+        <Subtitle className="light">
           Contact us now for a free bat survey quote within 48 hours
-        </SectionSubtitle>
+        </Subtitle>
         <Text className="light">First Name*</Text>
         {errors.firstName && (
           <ErrorAlert>{errors.firstName.message}</ErrorAlert>
@@ -117,13 +117,13 @@ const ContactForm = () => {
           Submit
         </FormButton>
       </Form>
-      <Header style={{ width: "90vw" }}>
+      <SectionHeader style={{ width: "90vw", textAlign: "center"}}>
         Alternatively email us at{" "}
         <a href="mailto:admin@ectoecology.com?subject=Survey%20Request&body=Hi%20there,%0AI'd%20like%20to%20book%20a%20survey.">
           {" "}
           admin@ectoecology.com
         </a>
-      </Header>
+      </SectionHeader>
     </>
   );
 };
