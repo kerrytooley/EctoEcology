@@ -3,6 +3,17 @@
 import NavigationButton from "@/components/NavigationButton";
 import SectionTitle, { Header, Text } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";
+import styled from "styled-components";
+
+const SectionWrapper = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
 
 export default function ContactPage() {
   return (
@@ -19,7 +30,7 @@ export default function ContactPage() {
         }}
       >
         <SectionTitle style={{ marginTop: 0 }}>Contact Us</SectionTitle>
-        <div style={{ display: "flex", flexDirection: "row", padding: "1rem" }}>
+        <SectionWrapper>
           <div style={{ flex: 1 }}>
             <Text>
               Contact us for quotes and information on bat ecology surveys. Our
@@ -36,7 +47,7 @@ export default function ContactPage() {
               </a>
             </Header>
           </div>
-        </div>
+        </SectionWrapper>
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <NavigationButton type="sales" />
