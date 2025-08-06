@@ -36,6 +36,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
+    &:hover {
+    a {
+      transform: scale(1.05);
+      font-weight: bold;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

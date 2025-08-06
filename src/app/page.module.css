@@ -108,6 +108,11 @@ a.secondary {
   flex-shrink: 0;
 }
 
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {

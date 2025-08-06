@@ -27,17 +27,17 @@ const CarouselComponent = () => {
       <SectionTitle id="see-our-work">See our work</SectionTitle>
       <Carousel>
         <CarouselCard
-          link="/secondPage"
-          image="/EctoE.png"
+          link="/Example Bat Survey Planning Outcome.pdf"
+          image="/surveys/Survey1.jpg"
           title="Recent Survey Planning Outcomes"
         />
         <CarouselCard
-          link="/secondPage"
+          link="/#recent-reviews"
           image="/EctoE.png"
           title="Recent Client Reviews"
         />
         <CarouselCard
-          link="/secondPage"
+          link="/#bat-diary"
           image="/EctoE.png"
           title="Bat Diary"
         />

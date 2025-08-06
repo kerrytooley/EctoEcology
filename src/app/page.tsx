@@ -21,8 +21,6 @@ export default function Home() {
         <ContactForm />
         <Gallery />
       </main>
-
-      <footer></footer>
     </div>
   );
 }

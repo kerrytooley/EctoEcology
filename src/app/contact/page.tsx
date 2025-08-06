@@ -1,5 +1,6 @@
 "use client";
 
+import styles from "../page.module.css";
 import NavigationButton from "@/components/NavigationButton";
 import SectionTitle, { Header, Text } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";
@@ -52,6 +53,6 @@ export default function ContactPage() {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <NavigationButton type="sales" />
       </div>
-    </>
+      </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import StickyHeader from "@/components/Header";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -50,7 +51,11 @@ export default function LayoutWrapper({
       <ParallaxProvider>
         <BackgroundImage src="/forest.jpg" alt="Forest Background" />
         <Parallax speed={-20} translateY={isDesktop ? [-0, 0] : [0, 0]}>
-          <PageWrapper>{children}</PageWrapper>
+          <PageWrapper>
+            {children}
+            
+          </PageWrapper>
+          <Footer />
         </Parallax>
       </ParallaxProvider>
     </div>
