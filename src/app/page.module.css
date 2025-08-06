@@ -108,7 +108,7 @@ a.secondary {
   flex-shrink: 0;
 }
 
-a:hover {
+a.primary:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
