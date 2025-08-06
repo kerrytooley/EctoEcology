@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "../page.module.css";
 import NavigationButton from "@/components/NavigationButton";
 import SectionTitle, { Header, Text } from "@/components/SectionTitles";
 import { colors } from "@/styles/theme";

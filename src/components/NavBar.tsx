@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
