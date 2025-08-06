@@ -14,7 +14,6 @@ const Carousel = styled.div`
   scrollbar-width: none; // Show scrollbar on Firefox
   width: fit-content;
   max-width: 90vw;
-  margin-bottom: 2rem;
 
   @media (max-width: 600px) {
     gap: 0.5rem;
@@ -25,20 +24,20 @@ const Carousel = styled.div`
 const CarouselComponent = () => {
   return (
     <>
-      <SectionTitle>See our work</SectionTitle>
+      <SectionTitle id="see-our-work">See our work</SectionTitle>
       <Carousel>
         <CarouselCard
-          link="/secondPage"
-          image="/EctoE.png"
+          link="/Example Bat Survey Planning Outcome.pdf"
+          image="/surveys/Survey1.jpg"
           title="Recent Survey Planning Outcomes"
         />
         <CarouselCard
-          link="/secondPage"
+          link="/#recent-reviews"
           image="/EctoE.png"
           title="Recent Client Reviews"
         />
         <CarouselCard
-          link="/secondPage"
+          link="/#bat-diary"
           image="/EctoE.png"
           title="Bat Diary"
         />

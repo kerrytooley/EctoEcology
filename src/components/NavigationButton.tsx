@@ -15,8 +15,7 @@ const Button = styled.button`
   display: flex;
   text-align: center;
   justify-content: center;
-  z-index: 1000;
-  
+
   text {
     padding-top: 0;
   }
@@ -47,9 +46,12 @@ const Button = styled.button`
       background-color: ${colors.dark};
       color: ${colors.light};
     }
+
+    @media (max-width: 768px) {
+      width: 200px;
+      font-size: 1.2rem;
+    }
   }
-
-
 `;
 
 interface NavigationButtonProps {
@@ -61,7 +63,7 @@ interface NavigationButtonProps {
 const NavigationButton = ({ link, title, type }: NavigationButtonProps) => {
   return (
     <Button className={type} style={{ alignSelf: "center" }}>
-      <Link href={link || "/secondScreen"}>
+      <Link href={type === "sales" ? "/#contact-form" : link || "/bers2"}>
         {title || "Get a FREE quote now"}
       </Link>
       <ChevronRight />

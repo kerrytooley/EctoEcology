@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 const GallerySlideshow = styled.div`
   display: flex;
@@ -13,6 +14,11 @@ const GallerySlideshow = styled.div`
   height: 350px;
   width: 100%;
   max-width: 100vw;
+  margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
 `;
 
 const SlideShowWrapper = styled.div`
@@ -118,19 +124,21 @@ interface ImageProps {
 }
 
 const ImageSlide = ({ source, alternateText, orientation }: ImageProps) => {
+    const isDesktop = useMediaQuery({ minWidth: 768 });
+    const imageHeight = isDesktop ? 300 : 200 ;
   const size =
     orientation === "portrait"
-      ? "200"
+      ? imageHeight * (3 / 4)
       : orientation === "landscape"
-        ? "400"
-        : "300";
+      ? imageHeight * (4 / 3)
+      : imageHeight;
   return (
     <Slide>
       <GalleryImage
         src={source}
         alt={alternateText}
         width={size}
-        height="300"
+        height={`${imageHeight}`}
       />
     </Slide>
   );
@@ -149,7 +157,7 @@ const Gallery = () => {
 
   return (
     <>
-      <GallerySlideshow>
+      <GallerySlideshow id="gallery-section">
         <NavButton onClick={prevSlide}>
           <ChevronLeft size={50} />
         </NavButton>

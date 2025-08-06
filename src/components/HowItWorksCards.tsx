@@ -11,7 +11,6 @@ const CardSet = styled.div`
   max-width: 90vw;
   overflow-x: hidden;
   flex-direction: row;
-  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -91,7 +90,7 @@ const MyInfoCard = ({ title, description, vectorImage }: InfoCardProps) => {
 const HowItWorksCards = () => {
   return (
     <>
-      <SectionTitle>How it works</SectionTitle>
+      <SectionTitle id="how-it-works">How it works</SectionTitle>
       <CardSet>
         {InfoCardData.map((data) => (
           <MyInfoCard
